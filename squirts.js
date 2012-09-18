@@ -13,13 +13,22 @@
         })
     };
 
-    Squirts.game.world.generate({
-        count  : 40,
-        radius : 60
-    })
+    
+
+    Squirts.game.world.clear(true);
 
     document.querySelector('#startGame').addEventListener('click', function() {
-        Squirts.game.running ? Squirts.game.stop() : Squirts.game.start();
+        if (Squirts.game.running) {
+            Squirts.game.stop();
+            Squirts.game.world.clearBlobs();
+        }
+
+        Squirts.game.world.generate({
+            count  : 80,
+            radius : 20
+        });
+
+        Squirts.game.start();
     });
 
     this.Squirts = Squirts;
