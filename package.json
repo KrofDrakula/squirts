@@ -2,6 +2,6 @@
   "name": "Squirts",
   "version": "0.0.1",
   "dependencies": {
-    "node-static": "~0.6.2"
+    "node-static": "*"
   }
 }
