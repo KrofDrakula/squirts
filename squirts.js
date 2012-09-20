@@ -32,9 +32,9 @@
     document.body.addEventListener('keydown', function(ev) {
         var key = String.fromCharCode(ev.keyCode);
         if (key.toLowerCase() == 'a') {
-            Squirts.game.world.timeMultiplier = Math.max(0.25, Squirts.game.world.timeMultiplier / 2);
+            Squirts.game.world.timeMultiplier = Math.max(0.125, Squirts.game.world.timeMultiplier / 2);
         } else if (key.toLowerCase() == 's') {
-            Squirts.game.world.timeMultiplier = Math.min(4, Squirts.game.world.timeMultiplier * 2);
+            Squirts.game.world.timeMultiplier = Math.min(8, Squirts.game.world.timeMultiplier * 2);
         }
     });
 
