@@ -13,14 +13,11 @@
         })
     };
 
-    
-
     Squirts.game.world.clear(true);
 
     document.querySelector('#startGame').addEventListener('click', function() {
         if (Squirts.game.running) {
             Squirts.game.stop();
-            Squirts.game.world.clearBlobs();
         }
 
         Squirts.game.world.generate({
@@ -30,6 +27,15 @@
         });
 
         Squirts.game.start();
+    });
+
+    document.body.addEventListener('keydown', function(ev) {
+        var key = String.fromCharCode(ev.keyCode);
+        if (key.toLowerCase() == 'a') {
+            Squirts.game.world.timeMultiplier = Math.max(0.25, Squirts.game.world.timeMultiplier / 2);
+        } else if (key.toLowerCase() == 's') {
+            Squirts.game.world.timeMultiplier = Math.min(4, Squirts.game.world.timeMultiplier * 2);
+        }
     });
 
     this.Squirts = Squirts;
