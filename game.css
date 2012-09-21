@@ -13,7 +13,7 @@
 * { margin: 0; padding: 0; }
 canvas { display: block; width: 100%; height: 100%; }
 html { background: url(assets/noise.png) top left; }
-body { background: none; font-family: 'gretoon_highlighregular' ;}
+body { background: none; font-family: 'gretoon_highlightregular' ;}
 
 #startScreen, #replayScreen {
     position: absolute;
