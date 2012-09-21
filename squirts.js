@@ -15,24 +15,33 @@
 
     Squirts.game.world.clear(true);
 
-    var button = document.querySelector('#startGame');
-    button.addEventListener('click', function() {
-        if (Squirts.game.running) {
-            Squirts.game.stop();
-        }
+    var buttons = document.querySelectorAll('[data-action=startGame]');
+    var startScreen = document.querySelector('#startScreen');
+    var replayScreen = document.querySelector('#replayScreen');
 
-        Squirts.game.world.generate({
-            count  : 160,
-            radius : 20,
-            speed  : 80
+    for(var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function(e) {
+            e.preventDefault();
+
+            if (Squirts.game.running) {
+                Squirts.game.stop();
+            }
+
+            Squirts.game.world.generate({
+                count  : 160,
+                radius : 20,
+                speed  : 80
+            });
+
+            Squirts.game.start();
+            startScreen.style.display = 'none';
+            replayScreen.style.display = 'none';
         });
-
-        Squirts.game.start();
-        button.style.display = 'none';
-    });
+    }
 
     Squirts.game.world.on('playerDied', function() {
-        button.style.display = 'block';
+        Squirts.game.stop();
+        replayScreen.style.display = 'block';
     });
 
     document.body.addEventListener('keydown', function(ev) {
