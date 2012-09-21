@@ -24,7 +24,7 @@
         Squirts.game.world.generate({
             count  : 160,
             radius : 20,
-            speed  : 10
+            speed  : 80
         });
 
         Squirts.game.start();
