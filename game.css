@@ -48,5 +48,6 @@ body { background: none; font-family: 'gretoon_highlighregular' ;}
     top: 10px;
     right: 10px;
     color: white;
+    display: none;
     font-size: 24px;
 }

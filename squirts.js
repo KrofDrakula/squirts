@@ -19,6 +19,7 @@
     var buttons = document.querySelectorAll('[data-action=startGame]');
     var startScreen = document.querySelector('#startScreen');
     var replayScreen = document.querySelector('#replayScreen');
+    var score = document.querySelector('#score');
 
     for(var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(e) {
@@ -35,6 +36,7 @@
             });
 
             Squirts.game.start();
+            score.style.display = 'block';
             startScreen.style.display = 'none';
             replayScreen.style.display = 'none';
         });
@@ -43,6 +45,21 @@
     Squirts.game.world.on('playerDied', function() {
         Squirts.game.stop();
         replayScreen.style.display = 'block';
+        score.style.display = 'none';
+    });
+
+    Squirts.game.world.on('absorbed', function() {
+        var blobs = Squirts.game.world.blobs.length - 1;
+        score.querySelector('span').textContent = blobs;
+        if (blobs <= 0) {
+            Squirts.game.stop();
+            replayScreen.style.display = 'block';
+            score.style.display = 'none';     
+        }
+    });
+
+    Squirts.game.world.on('squirted', function() {
+        score.querySelector('span').textContent = Squirts.game.world.blobs.length - 1;
     });
 
     document.body.addEventListener('keydown', function(ev) {
