@@ -15,7 +15,8 @@
 
     Squirts.game.world.clear(true);
 
-    document.querySelector('#startGame').addEventListener('click', function() {
+    var button = document.querySelector('#startGame');
+    button.addEventListener('click', function() {
         if (Squirts.game.running) {
             Squirts.game.stop();
         }
@@ -27,6 +28,11 @@
         });
 
         Squirts.game.start();
+        button.style.display = 'none';
+    });
+
+    Squirts.game.world.on('playerDied', function() {
+        button.style.display = 'block';
     });
 
     document.body.addEventListener('keydown', function(ev) {
