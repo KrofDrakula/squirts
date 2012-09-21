@@ -6,9 +6,10 @@
     var Squirts = {
         game: new GameLoop({
             world: new World({
-                canvas   : canvas,
-                extents  : new Rectangle(new Vector2d(0, 0), 2000, 2000),
-                viewport : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height)
+                canvas       : canvas,
+                extents      : new Rectangle(new Vector2d(0, 0), 2000, 2000),
+                viewport     : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
+                backgroundEl : document.documentElement
             })
         })
     };
