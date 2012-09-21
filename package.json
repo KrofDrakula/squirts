@@ -2,6 +2,7 @@
   "name": "Squirts",
   "version": "0.0.1",
   "dependencies": {
-    "node-static": "*"
+    "node-static": "*",
+    "grunt": "*"
   }
 }
