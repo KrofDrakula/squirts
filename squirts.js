@@ -22,7 +22,7 @@
         }
 
         Squirts.game.world.generate({
-            count  : 80,
+            count  : 160,
             radius : 20,
             speed  : 10
         });
