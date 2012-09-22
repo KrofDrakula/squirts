@@ -1,7 +1,9 @@
-(function() {
+window.addEventListener('load', function() {
     var canvas    = document.querySelector('canvas');
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
 
     var Squirts = {
         game: new GameLoop({
@@ -39,7 +41,7 @@
             score.style.display = 'block';
             startScreen.style.display = 'none';
             replayScreen.style.display = 'none';
-        });
+        }, false);
     }
 
     Squirts.game.world.on('playerDied', function() {
@@ -69,8 +71,8 @@
         } else if (key.toLowerCase() == 's') {
             Squirts.game.world.timeMultiplier = Math.min(8, Squirts.game.world.timeMultiplier * 2);
         }
-    });
+    }, false);
 
     this.Squirts = Squirts;
 
-})();
+}, false);
