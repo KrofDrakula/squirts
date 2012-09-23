@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
         })
     };
 
-    Squirts.game.world.clear(true);
+    Squirts.game.world.clear();
 
     var buttons = document.querySelectorAll('[data-action=startGame]');
     var startScreen = document.querySelector('#startScreen');
@@ -44,15 +44,19 @@ window.addEventListener('load', function() {
         }, false);
     }
 
+    // Listen for the `playerDied` event to show the end screen
     Squirts.game.world.on('playerDied', function() {
         Squirts.game.stop();
         replayScreen.style.display = 'block';
         score.style.display = 'none';
     });
 
+    // If any blob gets absorbed, we need to update the scoreboard
     Squirts.game.world.on('absorbed', function() {
         var blobs = Squirts.game.world.blobs.length - 1;
         score.querySelector('span').textContent = blobs;
+        // If there are no more blobs (besides the player), we need
+        // to show the end screen
         if (blobs <= 0) {
             Squirts.game.stop();
             replayScreen.style.display = 'block';
@@ -60,10 +64,15 @@ window.addEventListener('load', function() {
         }
     });
 
+    // If a player squirts a blob, it creates a new blob and we must
+    // update the scoreboard
     Squirts.game.world.on('squirted', function() {
         score.querySelector('span').textContent = Squirts.game.world.blobs.length - 1;
     });
 
+    // Handle time acceleration keys to slow down or speed up time
+    // NOTE: this handler will be refactored into a separate Controller
+    //       class that will issue commands to the game and the world.
     document.body.addEventListener('keydown', function(ev) {
         var key = String.fromCharCode(ev.keyCode);
         if (key.toLowerCase() == 'a') {
@@ -73,6 +82,7 @@ window.addEventListener('load', function() {
         }
     }, false);
 
+    // Export the game
     this.Squirts = Squirts;
 
 }, false);
