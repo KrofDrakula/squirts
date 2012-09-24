@@ -2,6 +2,8 @@
 
 A well-known indie game implemented in JavaScript, made in a hotel room in Warsaw, Poland.
 
+[Play it here](http://is.gd/squirts)
+
 ## Build
 
 Install the NPM packages:
