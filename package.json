@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "node-static": "*",
-    "grunt": "*"
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-uglify": "~0.2.4"
   }
 }

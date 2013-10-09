@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             files : '<config:concat.dist.src>',
             tasks : 'default'
         },
-        min: {
+        uglify: {
             dist: {
                 src: ['build/game.js'],
                 dest: 'build/game.min.js'
@@ -18,5 +18,8 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', 'concat min');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.registerTask('default', ['concat', 'uglify']);
 };
