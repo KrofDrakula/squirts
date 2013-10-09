@@ -15,18 +15,18 @@ npm install
 Build using Grunt:
 
 ```bash
-grunt
+./node_modules/.bin/grunt
 ```
 
 If you'd like to continuously update the game while hacking on the code, run the `watch` Grunt task:
 
 ```bash
-grunt watch
+./node_modules/.bin/grunt watch
 ```
 
 ## MIT Licensed
 
-Copyright (c) 2012 Klemen Slavič and Marko Novak
+Copyright (c) 2012+ Klemen Slavič and Marko Novak
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
