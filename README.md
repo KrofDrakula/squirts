@@ -1,5 +1,4 @@
 # Squirts
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/KrofDrakula/squirts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A well-known indie game implemented in JavaScript, made in a hotel room in Warsaw, Poland.
 
