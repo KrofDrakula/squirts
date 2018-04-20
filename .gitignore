@@ -8,13 +8,8 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 
-
 # Mac crap
 .DS_Store
-
-
-#### Generated files
-/build
 
 #### Node modules
 /node_modules
