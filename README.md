@@ -2,7 +2,7 @@
 
 A well-known indie game implemented in JavaScript, made in a hotel room in Warsaw, Poland.
 
-[Play it here](http://is.gd/squirts)
+[Play it here](https://krofdrakula.github.io/squirts/)
 
 ## Build
 
